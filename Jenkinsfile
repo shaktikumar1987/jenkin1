@@ -1,18 +1,26 @@
 pipeline {
-    agent any    
+    agent any
 
-stages {
+    stages {
         stage('Hello') {
             steps {
                 echo 'Hello World'
             }
         }
+       stage("Testing my code"){
 
-stages {
-        stage('Hello') {
-            steps {
-                echo 'Hello World'
-    
-            }
+         steps{
+           echo "Testing code againts CIS"
+         }
+       } 
+      stage("Runnign powershell script")
+      {
+        steps {
+
+          powershell '''write-host "This is from pipline as code"
+          get-service'''
         }
+        
+      }
+    }
 }
