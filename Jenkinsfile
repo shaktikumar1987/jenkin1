@@ -1,35 +1,21 @@
 pipeline {
-    agent any
+    agent any    
 
-    stages {
-        stage1('Hello') {
+stages {
+        stage('Hello') {
             steps {
                 echo 'Hello World'
             }
-       
         }
-  
-    stage1('Testing With My Personal Repo') {
-            steps {
-                echo 'Testing With New JenkinPipeline'
-    
     }
-  
-    }
-stage2('Testing powershell script') {
+}
+    stages {
+        stage('checking with powershell') {
             steps {
                 powershell '''write-host "this is running form jenkins  pipeline 2"
-                get-service'''
-      
- }
-  
-  
+
+		get-service'''
+            }
+        }
+    }
 }
-
-      stage1('Testing With My Personal Repo') {
-            steps {
-                echo 'Testing With New JenkinPipeline'
-
-   }
-}
-
